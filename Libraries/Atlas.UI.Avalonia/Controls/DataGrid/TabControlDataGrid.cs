@@ -201,6 +201,7 @@ namespace Atlas.UI.Avalonia.Controls
 				CanUserReorderColumns = true,
 				CanUserSortColumns = true,
 
+				Background = Theme.TabBackground,
 				RowBackground = Theme.GridBackground,
 				AlternatingRowBackground = Theme.GridBackground,
 				HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -229,11 +230,13 @@ namespace Atlas.UI.Avalonia.Controls
 			DataGrid.SelectedItem = null;
 
 			DataGrid.SelectionChanged += DataGrid_SelectionChanged;
+
 			DataGrid.CellPointerPressed += DataGrid_CellPointerPressed; // Add one click deselection
-			DataGrid.ColumnReordered += DataGrid_ColumnReordered;
+			//DataGrid.ColumnReordered += DataGrid_ColumnReordered;
 
 			//PointerPressedEvent.AddClassHandler<DataGridRow>((x, e) => x.DataGridRow_PointerPressed(e), handledEventsToo: true);
-			LayoutUpdated += TabControlDataGrid_LayoutUpdated;
+			DataGrid.ColumnReordered += DataGrid_ColumnReordered;
+			//LayoutUpdated += TabControlDataGrid_LayoutUpdated;
 
 			Dispatcher.UIThread.Post(AutoSizeColumns, DispatcherPriority.Background);
 
