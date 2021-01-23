@@ -132,23 +132,23 @@ namespace Atlas.UI.Wpf
 			if (grid.Children.Count <= 1)
 				return;
 
-			RowDefinition gridRow = new RowDefinition();
+			var gridRow = new RowDefinition();
 			gridRow.Height = new GridLength(5);
 			grid.RowDefinitions.Add(gridRow);
 
 			// Add a dummy panel so the children count equals the rowdefinition count, otherwise we need to track which rowdefinitions belong to which control
-			Rectangle panel = new Rectangle();
+			var panel = new Rectangle();
 			Grid.SetRow(panel, index);
 			grid.Children.Add(panel);
 		}
 
 		private void AddRowSplitter(Grid grid, int index)
 		{
-			RowDefinition gridRow = new RowDefinition();
+			var gridRow = new RowDefinition();
 			gridRow.Height = new GridLength(6);
 			grid.RowDefinitions.Insert(index, gridRow);
 
-			GridSplitter gridSplitter = new GridSplitter()
+			var gridSplitter = new GridSplitter()
 			{
 				Background = (SolidColorBrush)Resources[Keys.SplitterBrush],
 				ShowsPreview = true,
@@ -167,7 +167,7 @@ namespace Atlas.UI.Wpf
 				AddRowSplitter(gridParentControls, gridParentControls.RowDefinitions.Count);
 			else
 				AddRowSpacer(gridParentControls, gridParentControls.RowDefinitions.Count);
-			RowDefinition rowDefinition = new RowDefinition();
+			var rowDefinition = new RowDefinition();
 			if (fill)
 				rowDefinition.Height = new GridLength(1, GridUnitType.Star);
 			else

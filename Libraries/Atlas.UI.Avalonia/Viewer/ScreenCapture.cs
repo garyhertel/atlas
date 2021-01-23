@@ -86,7 +86,7 @@ namespace Atlas.UI.Avalonia
 			AddSplitter(2, 1, HorizontalAlignment.Right, VerticalAlignment.Stretch);
 			AddSplitter(1, 2, HorizontalAlignment.Stretch, VerticalAlignment.Bottom);
 
-			/*Panel panel = new Panel()
+			/*var panel = new Panel()
 			{
 				Background = Brushes.Blue,
 				[Grid.ColumnProperty] = 2,
@@ -94,7 +94,7 @@ namespace Atlas.UI.Avalonia
 			};
 			Children.Add(panel);*/
 
-			/*Border selectionBorder = new Border()
+			/*var selectionBorder = new Border()
 			{
 				BorderThickness = new Thickness(1),
 				BorderBrush = Brushes.Red,
